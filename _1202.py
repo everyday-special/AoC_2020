@@ -5,9 +5,9 @@ def answer1(filepath):
 	answer = 0
 	with open(filepath, 'r') as input_file:
 		for line in input_file:
-			line = line.split(' ')
-			count = line[2].count(line[1][0])
-			cons = line[0].split('-')
+			cons, char, password = line.split(' ')
+			count = password.count(char[0])
+			cons = cons.split('-')
 			if count >= int(cons[0]) and count <= int(cons[1]):
 				answer += 1
 	return answer
@@ -17,9 +17,8 @@ def answer2(filepath):
 	answer = 0
 	with open(filepath, 'r') as input_file:
 		for line in input_file:
-			line = line.split(' ')
-			indices = line[0].split('-')
-			if line[2][int(indices[0])-1] != line[2][int(indices[1])-1]:
-				if line[2][int(indices[0])-1] == line[1][0] or line[2][int(indices[1])-1] == line[1][0]:
-					answer += 1
+			indices, char, password = line.split(' ')
+			a, b = indices.split('-')
+			if (password[int(a)-1] == char[0]) ^ (password[int(b)-1] == char[0]):
+				answer += 1
 	return answer
