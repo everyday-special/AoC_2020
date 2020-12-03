@@ -1,4 +1,4 @@
-# filepath = 'input_1202.txt'
+# filepath = 'inputs/input_1202.txt'
 
 # Answer 1
 def answer1(filepath):

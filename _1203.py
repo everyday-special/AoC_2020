@@ -1,4 +1,4 @@
-# filepath = 'input_1203.txt'
+# filepath = 'inputs/input_1203.txt'
 
 # Answer 1
 def answer1(filepath, right = 3):
